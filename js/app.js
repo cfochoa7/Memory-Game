@@ -20,13 +20,12 @@ let equal = 0;
 /* Places the cards on the webpage. Creates a classlist within the created 'li' element
 and adds 'set' array within the 'i' element. tCard is appended within the sCard and the sCard is prepended
 within the deck */
+//Inspired by Mikes Wales in setting up the card--https://www.youtube.com/watch?v=_rUH-sEs68Y
 set.forEach(function(pack) {
     const sCard = document.createElement('li');
     const tCard = document.createElement('i');
     sCard.classList.add('card');
     tCard.className += (pack);
-    //https://developer.mozilla.org/en-US/docs/Web/API/Element/className
-
     sCard.appendChild(tCard);
     deck.prepend(sCard);
 
@@ -37,10 +36,10 @@ set.forEach(function(pack) {
 
 /* This function creates an addEventListener to the sCard that will 'open' and 'show' the card of a length
 of no more than 2 cards. For each two clicks the step() and countstars() will go into effect.
-Depending on the match the other functions will follow as well. */
+Depending on the match the other functions will follow as well.*/
+//Inspired by Mikes Wales--https://www.youtube.com/watch?v=_rUH-sEs68Y
 function start(sCard){
     sCard.addEventListener('click', event => {
-//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
 
       if (open.length === 2 || open.length < 2 && !open.includes(event.target)) {
         sCard.classList.add('open', 'show');
@@ -57,7 +56,7 @@ function start(sCard){
 then the pair will be psuhed into the array along with recording a move and adding to the equal of +1.
 Otherwise a mismatch will remove the 'open' and 'show' of the selected card. A move will still be recorded
 and a setTimeout will go into effect limiting the two cards to be open for 450 milliseconds. */
-//https://matthewcranford.com/memory-game-walkthrough-part-3-matching-pairs/
+//Code is influenced from Matthew Crandord--https://matthewcranford.com/memory-game-walkthrough-part-3-matching-pairs/
 function match () {
 
   if (open[0].firstChild.className === open[1].firstChild.className) {
@@ -103,7 +102,7 @@ The reStep() will reset the number of moves back to zero and displaying on the p
 The timeTravel() will reset the timer back to 0.*/
 function doOver(){
 reset.addEventListener('click', startOver => {
- // https://stackoverflow.com/questions/17849766/alternative-for-for-of-loop
+ //https://stackoverflow.com/questions/17849766/alternative-for-for-of-loop
  //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
   function gone() {
     const remove = Array.from(document.querySelectorAll('.card'));
@@ -213,6 +212,7 @@ function modalOn() {
 
 /* This function will unveil the score only if 8 pairs are matched.
 The DOMs are selected and added two each appropriate self to record the data. */
+//Code is influenced from Matthew Crandord--https://matthewcranford.com/memory-game-walkthrough-part-7-making-a-modal/
 function modalStats() {
  document.querySelector('.time').textContent = 'Time : ' + document.querySelector('.clock').textContent;
  document.querySelector('.starz').innerHTML = 'Rank ' + document.querySelector('.stars').innerHTML;
