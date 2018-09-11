@@ -20,7 +20,7 @@ let equal = 0;
 /* Places the cards on the webpage. Creates a classlist within the created 'li' element
 and adds 'set' array within the 'i' element. tCard is appended within the sCard and the sCard is prepended
 within the deck */
-//Inspired by Mikes Wales in setting up the card--https://www.youtube.com/watch?v=_rUH-sEs68Y
+//Inspired by Mikes Wales in setting up the cards--https://www.youtube.com/watch?v=_rUH-sEs68Y
 set.forEach(function(pack) {
     const sCard = document.createElement('li');
     const tCard = document.createElement('i');
