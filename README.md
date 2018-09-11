@@ -14,5 +14,6 @@ This project was created to focus the use and understanding of HTML, CSS, and Ja
 5. Click the cancel button to receive a messege from the developer
 
 ## Resources
-The website of Mozilla and Matthew Cranford were used as guidance for creating this project.
+The website of Mozilla, Stack Overflow, Mike Wales and Matthew Cranford were used as guidance for creating this project.
 Links to their resources can be found within the project.
+Special thanks to Mike Wales, Matthew Cranford, and the Udacity community for providing guidance for this project.
