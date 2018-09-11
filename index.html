@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Matching Game</title>
+    <meta name="description" content="">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+
+
+    <div class="container">
+        <header>
+            <h1>Matching Game</h1>
+        </header>
+
+        <section class="score-panel">
+        	<ul class="stars">
+
+        		<li class="fa fa-star"></li>
+        		<li class="fa fa-star"></li>
+        		<li class="fa fa-star"></li>
+        	</ul>
+
+        <span class="illusion">
+          <span class="moves"></span> Moves
+        </span>
+
+        <span class="clock">
+          <span id="minutes"></span>:<span id="seconds"></span>
+        </span>
+            <div class="restart">
+        		<i class="fa fa-repeat"></i>
+        	</div>
+        </section>
+
+        <ul class="deck">
+
+        </ul>
+    </div>
+
+
+      <div class="modal_background hidden">
+
+        <div class="second_body">
+          <div class="heading">
+            <h1 class="title">Results</h1>
+          </div>
+
+          <div class="stats">
+            <span class="time">Time : </span>
+            <span class="movez">Moves : </span>
+            <span class="starz">Rank </span>
+          </div>
+
+          <div class="buttons">
+            <button class="try_again">Try Again</button>
+            <a>
+            <button class="cancel_button">Cancel</button>
+
+            <div class="feature disapear">
+              <div class="end">
+               <h2>Thanks for Playing!</h2>
+               <p>In collaboration with Udacity</p>
+               <!--images from pixabay-->
+               <img src="http://i68.tinypic.com/245zgwj.jpg" alt="Image from Tinypic" class="logo">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    <script src="js/app.js"></script>
+
+
+</body>
+</html>
