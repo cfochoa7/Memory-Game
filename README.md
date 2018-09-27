@@ -17,3 +17,7 @@ This project was created to focus the use and understanding of HTML, CSS, and Ja
 The website of Mozilla, Stack Overflow, Mike Wales and Matthew Cranford were used as guidance for creating this project.
 Links to their resources can be found within the project.
 Special thanks to Mike Wales, Matthew Cranford, and the Udacity community for providing guidance for this project.
+
+* Mozilla
+* Mike Wales-https://www.youtube.com/watch?v=_rUH-sEs68Y 
+* Mathew Cranford-https://matthewcranford.com/memory-game-walkthrough-part-1-setup/
