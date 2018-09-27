@@ -10,7 +10,7 @@ const movesText = document.querySelector('.moves');
 const tryAgain = document.querySelector('.try_again');
 const cancel = document.querySelector('.cancel_button');
 
-//List of values that influence the step and time functions.
+//List of values.
 let move = 0
 let open = [];
 let min = 0;
@@ -18,12 +18,14 @@ let sec = -16;
 let equal = 0;
 
 /* Places the cards on the webpage. Creates a classlist within the created 'li' element
-and adds 'set' array within the 'i' element. tCard is appended within the sCard and the sCard is prepended
+and adds 'set' array within the 'i' element. tCard is inserted within the sCard and the sCard is inserted
 within the deck */
+
 //Inspired by Mikes Wales in setting up the cards--https://www.youtube.com/watch?v=_rUH-sEs68Y
 set.forEach(function(pack) {
     const sCard = document.createElement('li');
     const tCard = document.createElement('i');
+    
     sCard.classList.add('card');
     tCard.className += (pack);
     sCard.appendChild(tCard);
@@ -35,8 +37,10 @@ set.forEach(function(pack) {
 });
 
 /* This function creates an addEventListener to the sCard that will 'open' and 'show' the card of a length
-of no more than 2 cards. For each two clicks the step() and countstars() will go into effect.
-Depending on the match the other functions will follow as well.*/
+of no more than 2 cards. The sCard will be inserted within the new array 'open'.
+For each two clicks the step() and countstars() will go into effect.
+The gameover() will fire after all cards are paired.*/
+
 //Inspired by Mikes Wales--https://www.youtube.com/watch?v=_rUH-sEs68Y
 function start(sCard){
     sCard.addEventListener('click', event => {
@@ -44,6 +48,7 @@ function start(sCard){
       if (open.length === 2 || open.length < 2 && !open.includes(event.target)) {
         sCard.classList.add('open', 'show');
         open.push(sCard);
+          
           match();
           step();
           countStars();
@@ -53,10 +58,11 @@ function start(sCard){
 }
 
 /* This function will check the className of the firstChild in order to match the card. If matched
-then the pair will be psuhed into the array along with recording a move and adding to the equal of +1.
+then the pair will be pushed into the open-array along with recording a move and adding to the equal of +1.
 Otherwise a mismatch will remove the 'open' and 'show' of the selected card. A move will still be recorded
 and a setTimeout will go into effect limiting the two cards to be open for 450 milliseconds. */
-//Code is influenced from Matthew Crandord--https://matthewcranford.com/memory-game-walkthrough-part-3-matching-pairs/
+
+//Code is influenced from Matthew Cranford--https://matthewcranford.com/memory-game-walkthrough-part-3-matching-pairs/
 function match () {
 
   if (open[0].firstChild.className === open[1].firstChild.className) {
@@ -70,7 +76,7 @@ function match () {
 } else {
   function limit(){
       if(open[0].firstChild.className !== open[1].firstChild.className) {
-        console.log('no');
+        console.log('no match');
         open[0].classList.remove('open', 'show') || open[1].classList.remove('open', 'show');
 
         open = [];
@@ -85,10 +91,10 @@ function step() {
   document.querySelector('.moves').innerText = move;
 }
 
-/* The  addEventListener to the reset button  will reverse the game back to its
+/* The  addEventListener to the reset button will reverse the game back to its
 original state.
 
-The gone() will remove any open cards or matches using the forEach() method and selecting its classes.
+The gone() will remove any open cards or matches using the forEach() method on selecting its classes.
 
 The mix() will use an array form the '.deck li' and place it inside the shuffle function.
 Then the shuffle function will be placed inside the sleightOfHand and use the forEach() method
@@ -97,12 +103,11 @@ the child from the card.
 
 The add() will select the DOM of '.stars' and reset their number by using the innerHTML.
 
-The reStep() will reset the number of moves back to zero and displaying on the page with innerHTML.
+The reStep() will reset the number of moves back to zero and displaying them on the page with innerHTML.
 
 The timeTravel() will reset the timer back to 0.*/
 function doOver(){
 reset.addEventListener('click', startOver => {
- //https://stackoverflow.com/questions/17849766/alternative-for-for-of-loop
  //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
   function gone() {
     const remove = Array.from(document.querySelectorAll('.card'));
@@ -145,7 +150,7 @@ reset.addEventListener('click', startOver => {
 });
 }
 
-/* The shuffle function will goin in to the mix function.*/
+/* The shuffle function will go into the mix function.*/
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
 
@@ -211,7 +216,8 @@ function modalOn() {
 }
 
 /* This function will unveil the score only if 8 pairs are matched.
-The DOMs are selected and added two each appropriate self to record the data. */
+The DOMs are selected and added to each appropriate self to record the data. */
+
 //Code is influenced from Matthew Crandord--https://matthewcranford.com/memory-game-walkthrough-part-7-making-a-modal/
 function modalStats() {
  document.querySelector('.time').textContent = 'Time : ' + document.querySelector('.clock').textContent;
@@ -221,7 +227,7 @@ function modalStats() {
 
 
 /* The addEventListener is added through the tryAgain button. This button is only available after the player
-finishes the game. The replay() has the same exact functions from the doOver(). */
+finishes the game. The replay() has the same exact functions from the doOver() on line 109. */
 tryAgain.addEventListener('click', replay);
 function replay() {
  const remove = Array.from(document.querySelectorAll('.card'));
