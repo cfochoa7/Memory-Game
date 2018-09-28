@@ -114,9 +114,10 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgb(192, 192, 192, 0.75);
+  height: 512px;
+  width: 512px;
+  padding-left: 680px;
+  margin-top: 100px;
 }
 
 .second_body {
