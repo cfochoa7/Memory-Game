@@ -110,7 +110,6 @@ h1 {
     cursor: pointer;
 }
 
-//Mathew Cranford (2018) Memory Game Walkthrough. https://matthewcranford.com/memory-game-walkthrough-part-7-making-a-modal/
 .modal_background {
   position: absolute;
   top: 0;
@@ -120,18 +119,17 @@ h1 {
   background-color: rgb(192, 192, 192, 0.75);
 }
 
-//Mathew Cranford (2018) Memory Game Walkthrough. https://matthewcranford.com/memory-game-walkthrough-part-7-making-a-modal/
 .second_body {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 525px;
+  margin-top: 100px;
   top: 50%;
   left: 50%;
-  background: #ffffff;
+  background-color: #06F9D8;
   transform: translate(-50%, -70%);
-  list-style-type: none;
-  flex-direction: row-reverse;
-
+  outline-style: solid;
+  outline-width: thick;
 }
 
 .heading {
@@ -143,7 +141,7 @@ h1 {
 }
 
 .title {
-  margin-left: 125px;
+  margin-left: 175px;
 }
 
 
