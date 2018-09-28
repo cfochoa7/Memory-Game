@@ -14,7 +14,7 @@ This project was created to focus the use and understanding of HTML, CSS, and Ja
 5. Click the cancel button to receive a messege from the developer
 
 ## Resources
-Special thanks to Mike Wales, Matthew Cranford, and the Udacity community for providing guidance for this project.
+Special thanks to Mike Wales, Matthew Cranford, and the Udacity community for providing guidance on this project.
 
 * Mike Wales
 * Mathew Cranford
