@@ -41,7 +41,7 @@ of no more than 2 cards. The sCard will be inserted within the new array 'open'.
 For each two clicks the step() and countstars() will go into effect.
 The gameover() will fire after all cards are paired.*/
 
-//Inspired by Mikes Wales--https://www.youtube.com/watch?v=_rUH-sEs68Y
+//* Mike Wales (2018) FEND P3 - Memory Game With Mike Wales-ZUH-SEs68Y. https://www.youtube.com/watch?time_continue=1932&v=x47oLiTpIVk
 function start(sCard){
     sCard.addEventListener('click', event => {
 
@@ -62,7 +62,7 @@ then the pair will be pushed into the open-array along with recording a move and
 Otherwise a mismatch will remove the 'open' and 'show' of the selected card. A move will still be recorded
 and a setTimeout will go into effect limiting the two cards to be open for 450 milliseconds. */
 
-//Code is influenced from Matthew Cranford--https://matthewcranford.com/memory-game-walkthrough-part-3-matching-pairs/
+//Mathew Cranford (2018) Memory Game Walkthrough. https://matthewcranford.com/memory-game-walkthrough-part-3-matching-pairs/
 function match () {
 
   if (open[0].firstChild.className === open[1].firstChild.className) {
@@ -108,7 +108,6 @@ The reStep() will reset the number of moves back to zero and displaying them on 
 The timeTravel() will reset the timer back to 0.*/
 function doOver(){
 reset.addEventListener('click', startOver => {
- //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
   function gone() {
     const remove = Array.from(document.querySelectorAll('.card'));
     remove.forEach(function(card){
@@ -212,7 +211,7 @@ function gameOver() {
 /* This function will unveil the '.modal_background' using the toggle method only if
 8 pairs are matched. */
 
-//Inspired from Matthew Cranford-https://matthewcranford.com/memory-game-walkthrough-part-8-putting-it-all-together/
+//Mathew Cranford (2018) Memory Game Walkthrough. https://matthewcranford.com/memory-game-walkthrough-part-8-putting-it-all-together/
 function modalOn() {
  document.querySelector('.modal_background').classList.toggle('hidden');
 }
@@ -220,7 +219,7 @@ function modalOn() {
 /* This function will unveil the score only if 8 pairs are matched.
 The DOMs are selected and added to each appropriate self to record the data. */
 
-//Code is influenced from Matthew Crandord--https://matthewcranford.com/memory-game-walkthrough-part-7-making-a-modal/
+//Mathew Cranford (2018) Memory Game Walkthrough. https://matthewcranford.com/memory-game-walkthrough-part-7-making-a-modal/
 function modalStats() {
  document.querySelector('.time').textContent = 'Time : ' + document.querySelector('.clock').textContent;
  document.querySelector('.starz').innerHTML = 'Rank ' + document.querySelector('.stars').innerHTML;
@@ -260,7 +259,7 @@ function replay() {
 finishes the game. The '.feature' from the DOM is unveiled throught the toggle method.
 The clearInterval will stop the timer using the 'freeze' value.*/
 
-//Inspired by Matthew Cranford-https://matthewcranford.com/memory-game-walkthrough-part-8-putting-it-all-together/
+//Mathew Cranford (2018) Memory Game Walkthrough-https://matthewcranford.com/memory-game-walkthrough-part-8-putting-it-all-together/
 cancel.addEventListener('click', function() {
  document.querySelector('.feature').classList.toggle('disapear');
  clearInterval(freeze);
