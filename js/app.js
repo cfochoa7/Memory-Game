@@ -211,6 +211,8 @@ function gameOver() {
 
 /* This function will unveil the '.modal_background' using the toggle method only if
 8 pairs are matched. */
+
+//Inspired from Matthew Cranford-https://matthewcranford.com/memory-game-walkthrough-part-8-putting-it-all-together/
 function modalOn() {
  document.querySelector('.modal_background').classList.toggle('hidden');
 }
@@ -257,6 +259,8 @@ function replay() {
 /* The addEventListener is added through the tryAgain button. This button is only available after the player
 finishes the game. The '.feature' from the DOM is unveiled throught the toggle method.
 The clearInterval will stop the timer using the 'freeze' value.*/
+
+//Inspired by Matthew Cranford-https://matthewcranford.com/memory-game-walkthrough-part-8-putting-it-all-together/
 cancel.addEventListener('click', function() {
  document.querySelector('.feature').classList.toggle('disapear');
  clearInterval(freeze);
